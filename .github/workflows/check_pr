@@ -7,7 +7,7 @@ on:
 jobs:
   run_tests:
     name: Run tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -16,7 +16,7 @@ jobs:
       - run: python main.py
   validate_code:
     name: Validate code
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
