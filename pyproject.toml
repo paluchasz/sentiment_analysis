@@ -2,7 +2,7 @@
 name = "sentiment-analysis"
 version = "0.0.1b0"
 description = "Movie review sentiment analysis model"
-authors = ["felixcs1 <felix.s@hotmail.co.uk>"]
+authors = ["paluchasz <paluchasz@googlemail.com>", "felixcs1 <felix.s@hotmail.co.uk>"]
 readme = "README.md"
 packages = [{include = "sentiment_analysis"}]
 
