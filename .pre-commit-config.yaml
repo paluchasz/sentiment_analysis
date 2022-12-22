@@ -32,6 +32,6 @@ repos:
     hooks:
       - id: poetry-check
       - id: poetry-lock
-      # Only if we want to creata requirements.txt file
+      # Only if we want to create a requirements.txt file
       # - id: poetry-export
       #   args: ["-f", "requirements.txt", "-o", "requirements.txt"]

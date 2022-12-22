@@ -6,9 +6,7 @@ Create a `data` directory and put the `aclImdb` downloaded folder inside it to r
 
 ## Setup
 
-WIP needs filling in once we have decided on how we manage dependencies and run code
-
-We are usng poerty to manage virtual envs and dependency management.
+We use poetry to manage the virtual env and dependency management.
 
 - Install poetry from [here](https://python-poetry.org/docs/)
 - From project root run
@@ -16,11 +14,7 @@ We are usng poerty to manage virtual envs and dependency management.
 poetry install
 ```
 this will create a virtual env in a `.venv` folder and install all dependencies into it.
-- To run command in the venv either open a shell with
+- To activate a shell in the venv run
 ```
 poetry shell
-```
-or run from commands from outside the shell with
-```
-poetry run <command>
 ```
