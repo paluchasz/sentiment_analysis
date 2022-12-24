@@ -1,6 +1,6 @@
 ![Interrogate](./docs/_static/interrogate_badge.svg)
 
-![Test Suite](https://github.com/paluchasz/sentiment_analysis/blob/main/.github/workflows/check_pr.yaml/badge.svg)
+![Test Suite](https://github.com/paluchasz/sentiment_analysis/actions/workflows/check_pr.yaml/badge.svg)
 
 # Sentiment Analysis
 
