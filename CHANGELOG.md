@@ -7,7 +7,7 @@
 ## Extras (https://github.com/paluchasz/sentiment_analysis/pull/4)
 
 - Some extra commit hooks
-- Our first badge!
+- Our first badges! One for doc string coverage and one for status of tests workflow on main branch
 ## Poetry (https://github.com/paluchasz/sentiment_analysis/pull/3)
 
 - Set up venv and dependency management using poetry
