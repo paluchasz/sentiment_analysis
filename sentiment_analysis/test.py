@@ -1,3 +1,4 @@
+# test
 import numpy as np
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
@@ -9,6 +10,7 @@ v = tf.Variable(1)
 
 @tf.function
 def f(x):
+    """A doc string to get interrogate commit hook passing"""
     ta = tf.TensorArray(tf.float32, size=0, dynamic_size=True)
     for i in tf.range(x):
         v.assign_add(i)

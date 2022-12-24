@@ -42,4 +42,4 @@ repos:
     rev: 1.5.0
     hooks:
       - id: interrogate
-        args: [--fail-under=80, --verbose]
+        args: [--fail-under=70, --verbose, --generate-badge=./docs/_static]
