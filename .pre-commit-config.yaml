@@ -10,6 +10,9 @@ repos:
       - id: check-toml
       - id: check-yaml
       - id: check-merge-conflict
+      - id: check-executables-have-shebangs
+      - id: check-added-large-files
+        args: ['--maxkb=350', '--enforce-all']
 
   - repo: https://github.com/psf/black
     rev: 22.12.0
@@ -34,3 +37,9 @@ repos:
       # Only if we want to create a requirements.txt file
       # - id: poetry-export
       #   args: ["-f", "requirements.txt", "-o", "requirements.txt"]
+
+  - repo: https://github.com/econchick/interrogate
+    rev: 1.5.0
+    hooks:
+      - id: interrogate
+        args: [--fail-under=70, --verbose, --generate-badge=./docs/_static]
