@@ -38,8 +38,8 @@ repos:
       # - id: poetry-export
       #   args: ["-f", "requirements.txt", "-o", "requirements.txt"]
 
-  - repo: https://github.com/econchick/interrogate
-    rev: 1.5.0
-    hooks:
-      - id: interrogate
-        args: [--fail-under=70, --verbose, --generate-badge=./docs/_static]
+  # - repo: https://github.com/econchick/interrogate
+  #   rev: 1.5.0
+  #   hooks:
+  #     - id: interrogate
+  #       args: [--fail-under=70, --verbose, --generate-badge=./docs/_static]
