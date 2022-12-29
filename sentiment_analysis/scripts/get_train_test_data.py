@@ -21,7 +21,7 @@ class EnvVars(BaseSettings):
     TRAIN_TEST_DIR: Path
 
     @root_validator
-    def _decompose(cls, values):
+    def _convert_relative_to_absolute_paths(cls, values):
         values["RAW_DATA_DIR"] = values["RAW_DATA_DIR"].resolve()
         values["TRAIN_TEST_DIR"] = values["TRAIN_TEST_DIR"].resolve()
         return values

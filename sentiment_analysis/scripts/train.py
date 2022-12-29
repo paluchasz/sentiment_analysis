@@ -26,9 +26,10 @@ class EnvVars(BaseSettings):
     SAVE_MODEL_DIR: Optional[Path] = None
 
     @root_validator
-    def _decompose(cls, values):
+    def _convert_relative_to_absolute_paths(cls, values):
         values["TRAIN_DATA_PATH"] = values["TRAIN_DATA_PATH"].resolve()
-        values["SAVE_MODEL_DIR"] = values["SAVE_MODEL_DIR"].resolve()
+        if values["SAVE_MODEL_DIR"] is not None:
+            values["SAVE_MODEL_DIR"] = values["SAVE_MODEL_DIR"].resolve()
         return values
 
 
@@ -79,8 +80,9 @@ def custom_training(
 
     print("Training time: {}".format(time.time() - start_time))
     if save_model_dir:
-        print("Saving model")
+        print(f"Saving model in {save_model_dir}")
         model.save_pretrained(save_model_dir)
+        tokenizer.save_pretrained(save_model_dir)
     if stats_dir:
         print("Saving stats")
         json.dump(
