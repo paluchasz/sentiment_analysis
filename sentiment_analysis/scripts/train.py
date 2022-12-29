@@ -7,6 +7,7 @@ import numpy as np
 import tensorflow as tf
 from dotenv import load_dotenv
 from pydantic import BaseSettings
+from pydantic.class_validators import root_validator
 from sklearn.model_selection import train_test_split
 from transformers import DistilBertTokenizer, TFDistilBertForSequenceClassification
 
@@ -23,6 +24,12 @@ class EnvVars(BaseSettings):
     BATCH_SIZE: int = 64 if GPU_AVAILABLE else 1
     VAL_BATCH_SIZE: int = 16 if GPU_AVAILABLE else 1
     SAVE_MODEL_DIR: Optional[Path] = None
+
+    @root_validator
+    def _decompose(cls, values):
+        values["TRAIN_DATA_PATH"] = values["TRAIN_DATA_PATH"].resolve()
+        values["SAVE_MODEL_DIR"] = values["SAVE_MODEL_DIR"].resolve()
+        return values
 
 
 ENV_VARS = EnvVars()
@@ -52,7 +59,7 @@ def custom_training(
     val_losses = []
     steps = int(np.ceil(len(train_dataset)))
     if not val_step_freq:
-        val_step_freq = int(steps / 10)
+        val_step_freq = max(1, int(steps / 10))
     for epoch in range(epochs):
         print("Starting epoch {}/{}".format(epoch + 1, epochs))
         for step, (x_batch, y_batch) in enumerate(train_dataset):

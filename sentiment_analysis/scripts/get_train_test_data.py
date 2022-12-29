@@ -9,7 +9,7 @@ from pathlib import Path
 
 import numpy as np
 from dotenv import load_dotenv
-from pydantic import BaseSettings
+from pydantic import BaseSettings, root_validator
 
 load_dotenv(".env")
 
@@ -19,6 +19,12 @@ class EnvVars(BaseSettings):
 
     RAW_DATA_DIR: Path
     TRAIN_TEST_DIR: Path
+
+    @root_validator
+    def _decompose(cls, values):
+        values["RAW_DATA_DIR"] = values["RAW_DATA_DIR"].resolve()
+        values["TRAIN_TEST_DIR"] = values["TRAIN_TEST_DIR"].resolve()
+        return values
 
 
 ENV_VARS = EnvVars()
