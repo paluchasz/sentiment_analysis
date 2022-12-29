@@ -1,10 +1,8 @@
 
 # Sentiment Analysis
 ![Test Suite](https://github.com/paluchasz/sentiment_analysis/actions/workflows/check_pr.yaml/badge.svg?branch=main)
-![Interrogate](./docs/_static/interrogate_badge.svg)
 
-Using transformers to predict the sentiment of movie reviews from the Stanford datataset available here: https://ai.stanford.edu/~amaas/data/sentiment/.
-Create a `data` directory and put the `aclImdb` downloaded folder inside it to run.
+Using transformers to predict the sentiment of movie reviews from the Stanford dataset available [here](https://ai.stanford.edu/~amaas/data/sentiment/).
 
 
 ## Setup
@@ -21,3 +19,11 @@ this will create a virtual env in a `.venv` folder and install all dependencies 
 ```
 poetry shell
 ```
+
+## Training scripts
+To run the scripts the sample_data and sample env file can be used. For the full dataset download from
+[here](https://ai.stanford.edu/~amaas/data/sentiment/).
+
+The 3 scripts are defined as executables in the `pyproject.toml` file and if this repository is installed
+as a package with either `poetry install` or `pip install .` the scripts can be called with simply: `get_train_test_data`,
+`train` and `predict_and_evaluate`.

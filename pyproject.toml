@@ -8,15 +8,25 @@ packages = [{include = "sentiment_analysis"}]
 
 [tool.poetry.dependencies]
 python = "~3.9"
-tensorflow = "^2.11.0"
+#tensorflow = "^2.11.0"
+tensorflow-macos = "^2.11.0"
 numpy = "^1.24.0"
 transformers = "^4.25.1"
 scikit-learn = "^1.2.0"
+python-dotenv = "0.21.0"
+pydantic = "^1.10.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.0"
 plotly = "^5.11.0"
 pre-commit = "^2.20.0"
+isort = "^5.11.4"
+black = "^22.12.0"
+
+[tool.poetry.scripts]
+get_train_test_data = "sentiment_analysis.scripts.get_train_test_data:main"
+train = "sentiment_analysis.scripts.train:main"
+predict_and_evaluate = "sentiment_analysis.scripts.predict_and_evaluate:main"
 
 [build-system]
 requires = ["poetry-core"]
