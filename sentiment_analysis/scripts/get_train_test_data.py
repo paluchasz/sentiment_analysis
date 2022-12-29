@@ -2,7 +2,7 @@ from __future__ import annotations
 
 """
 To use this script download raw data from https://ai.stanford.edu/~amaas/data/sentiment/ and specify path to the
-aclImdb folder.
+aclImdb folder. If installed with poetry can simply run `get_train_test_data`.
 """
 import json
 from pathlib import Path
