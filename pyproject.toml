@@ -26,6 +26,7 @@ black = "^22.12.0"
 [tool.poetry.scripts]
 get_train_test_data = "sentiment_analysis.scripts.get_train_test_data:main"
 train = "sentiment_analysis.scripts.train:main"
+predict_and_evaluate = "sentiment_analysis.scripts.predict_and_evaluate:main"
 
 [build-system]
 requires = ["poetry-core"]
